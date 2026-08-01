@@ -23,35 +23,4 @@
 
 #
 
-### Stored Files
-
-**question.json**
-
-- Problem statement
-- Constraints
-- Examples
-- test cases
-- Difficulty
-- Topics
-- Supported languages
-- AI-generated signature summary
-
-**solution.(cpp|py|java)**
-
-- Submitted source code
-
-**metadata.json**
-
-- Submission status
-- Language
-- Score
-- Time taken
-- Time & space complexity
-- LLM feedback
-- Optimization hints
-- Model used for evaluation
-- Submission timestamps
-
-#
-
 > This repository serves as the persistent coding knowledge base for **InsertionAI**, enabling adaptive question generation, progress tracking, and long-term interview preparation.
