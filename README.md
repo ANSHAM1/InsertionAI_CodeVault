@@ -18,7 +18,7 @@
 **Repository Structure**
 
 <p align="center">
-  <img src="./assets/img.png" alt="ContextFlow.AI Workflow" width="100%">
+  <img src="./img.png" alt="InsertionAI_CodeVault" width="100%">
 </p>
 
 #
