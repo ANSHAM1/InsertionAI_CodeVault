@@ -1,4 +1,4 @@
-## InsertionAI-CodeVault
+## InsertionAI_CodeVault
 
 ### AI-generated coding challenges, solutions, and learning history powering InsertionAI.
 
