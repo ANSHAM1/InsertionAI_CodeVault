@@ -6,12 +6,12 @@
 
 #### A structured repository that stores AI-generated programming problems, complete solution history, metadata, and progress analytics for continuous interview preparation.
 
-- 🤖 Generated and managed automatically by **InsertionAI**
-- 🧩 Stores AI-generated coding challenges with public and hidden test cases
-- 💻 Archives every submitted solution in **Python**, **C++**, and **Java**
-- 📈 Tracks solving history, completion status, difficulty, and performance
-- 🧠 Maintains metadata for learning analytics and future question generation
-- ⚠️ This repository is intended to be managed by InsertionAI and is not designed for manual editing.
+-  Generated and managed automatically by **InsertionAI**
+-  Stores AI-generated coding challenges with public and hidden test cases
+-  Archives every submitted solution in **Python**, **C++**, and **Java**
+-  Tracks solving history, completion status, difficulty, and performance
+-  Maintains metadata for learning analytics and future question generation
+-  This repository is intended to be managed by InsertionAI and is not designed for manual editing.
 
 #
 
