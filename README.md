@@ -17,7 +17,9 @@
 
 **Repository Activity**
 
-![Alt](https://repobeats.axiom.co/api/embed/bdd071b3cb272f2080fac58789d930e8a168b685.svg "Repobeats analytics image")
+<p align="center">
+  <img src="https://repobeats.axiom.co/api/embed/bdd071b3cb272f2080fac58789d930e8a168b685.svg" alt="Repobeats analytics image" />
+</p>
 
 #
 
