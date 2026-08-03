@@ -1,0 +1,19 @@
+{
+    "question_id": "1",
+    "title": "No user prompt provided.",
+    "difficulty": "EASY",
+    "statement": "Since the user prompt is empty, output a placeholder code that indicates no prompt was given.",
+    "summary": "Print a message indicating no prompt.",
+    "constraints": [
+        "None"
+    ],
+    "examples": [],
+    "testcases": [],
+    "topics": [],
+    "io_template": [
+        "stdin",
+        "stdout",
+        "none"
+    ],
+    "time_limit": 1000
+}
