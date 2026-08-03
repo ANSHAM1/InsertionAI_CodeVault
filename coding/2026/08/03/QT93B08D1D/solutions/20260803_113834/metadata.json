@@ -1,0 +1,14 @@
+{
+    "question_id": "QT93B08D1D",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-03T11:38:34.226000Z",
+    "submitted_at": "2026-08-03T11:38:39.427000Z",
+    "time_taken": 0,
+    "time_complexity": "N/A",
+    "space_complexity": "N/A",
+    "passed_public_tests": {},
+    "feedback": "The submitted code only contains a function declaration with no implementation. It does not compile and therefore cannot solve the problem. No algorithmic approach is present.",
+    "optimization_hint": "Implement a solution: sort intervals by start, compute total union length, then identify the k intervals whose removal yields the greatest reduction in overlap (or greatest increase in union length). This can be done by calculating each interval's unique contribution after merging overlaps and using a priority queue to remove up to k intervals with smallest unique contribution (or largest overlap)."
+}
