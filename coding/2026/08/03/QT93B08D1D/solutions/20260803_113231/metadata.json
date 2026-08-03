@@ -1,0 +1,14 @@
+{
+    "question_id": "QT93B08D1D",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 10,
+    "started_at": "2026-08-03T11:32:31.945000Z",
+    "submitted_at": "2026-08-03T11:32:36.864000Z",
+    "time_taken": 0,
+    "time_complexity": "O(??)",
+    "space_complexity": "O(??)",
+    "passed_public_tests": {},
+    "feedback": "The submitted code only contains a function declaration with no implementation, so it does not compile and cannot solve the problem. A correct solution must compute the total union length of all intervals and then subtract the minimal possible loss from removing up to k intervals, which depends on each interval's unique (non‑overlapping) contribution. The implementation is missing entirely.",
+    "optimization_hint": "Compute the total union length and, using a sweep line, find for each interval the length of points covered by exactly that interval (its unique contribution). Removing an interval reduces the union by this amount. To maximize the remaining union, remove up to k intervals with the smallest unique contributions. Sort these contributions and subtract the sum of the min(k, n) smallest from the total union length. This runs in O(n log n) time and O(n) space."
+}
