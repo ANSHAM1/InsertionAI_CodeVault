@@ -1,0 +1,19 @@
+{
+    "question_id": "2",
+    "title": "Generate a simple function that returns None.",
+    "difficulty": "EASY",
+    "statement": "Write a function that takes no arguments and returns None.",
+    "summary": "Function returns None.",
+    "constraints": [
+        "None"
+    ],
+    "examples": [],
+    "testcases": [],
+    "topics": [],
+    "io_template": [
+        "stdin",
+        "stdout",
+        "none"
+    ],
+    "time_limit": 1000
+}
