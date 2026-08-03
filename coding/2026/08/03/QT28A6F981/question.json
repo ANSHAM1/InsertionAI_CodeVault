@@ -1,0 +1,48 @@
+{
+    "question_id": "QT28A6F981",
+    "title": "Minimum Operations to Make String Palindrome by Incrementing Letters",
+    "difficulty": "EASY",
+    "statement": "You are given a string `s` consisting only of lowercase English letters. In one operation you may choose any index `i` (0‑based) and replace `s[i]` with the next letter in the alphabet, where `'z'` wraps around to `'a'`. You may apply the operation any number of times on any positions. Return the minimum total number of operations required to transform `s` into a palindrome. If the string is already a palindrome the answer is `0`.",
+    "summary": "Compute the minimal number of letter‑increment operations required to turn a string into a palindrome.",
+    "constraints": [
+        "1 ≤ s.length ≤ 10^5",
+        "`s` contains only characters `'a'`–`'z'`."
+    ],
+    "examples": [
+        {
+            "input": "s = \"abc\"",
+            "output": "2",
+            "explanation": "Pair (a,c): best target is 'b' (cost 1+1=2). Middle character 'b' needs no change. Total = 2."
+        },
+        {
+            "input": "s = \"zab\"",
+            "output": "2",
+            "explanation": "Pair (z,b): any target gives cost 2. Middle 'a' unchanged."
+        },
+        {
+            "input": "s = \"aaa\"",
+            "output": "0",
+            "explanation": "Already a palindrome."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "s = \"ace\"",
+            "output": "4"
+        },
+        {
+            "input": "s = \"xyz\"",
+            "output": "2"
+        }
+    ],
+    "topics": [
+        "string",
+        "greedy"
+    ],
+    "io_template": {
+        "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint minOperations(string s) {\n    // TODO: implement\n    return 0;\n}",
+        "python": "def minOperations(s: str) -> int:\n    # TODO: implement\n    return 0",
+        "java": "class Solution {\n    public int minOperations(String s) {\n        // TODO: implement\n        return 0;\n    }\n}"
+    },
+    "time_limit": 1000
+}
