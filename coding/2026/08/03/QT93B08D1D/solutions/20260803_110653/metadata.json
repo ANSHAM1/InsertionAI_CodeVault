@@ -1,0 +1,14 @@
+{
+    "question_id": "QT93B08D1D",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-03T11:06:53.625000Z",
+    "submitted_at": "2026-08-03T11:29:10.698000Z",
+    "time_taken": 50,
+    "time_complexity": "N/A",
+    "space_complexity": "N/A",
+    "passed_public_tests": {},
+    "feedback": "The submitted code only contains a function declaration with no implementation. It does not compile and therefore cannot produce any output. A correct solution must compute the maximum union length after removing at most k intervals, for example by sorting intervals and using dynamic programming or a greedy approach to evaluate the effect of removals.",
+    "optimization_hint": "Implement an algorithm that sorts intervals by start, computes prefix and suffix union lengths, and uses DP to find the best k intervals to remove, achieving O(n log n) time and O(n) space."
+}
