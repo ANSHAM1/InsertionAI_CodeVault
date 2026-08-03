@@ -1,0 +1,38 @@
+{
+    "question_id": "QTFE8C9CDA",
+    "title": "Longest Substring Without Repeating Characters",
+    "difficulty": "MEDIUM",
+    "statement": "Given a string `s`, find the length of the longest substring without repeating characters.\n\n**Input**\n- A single line containing the string `s` (consists of English letters, digits, symbols, and spaces).\n\n**Output**\n- Print an integer representing the length of the longest substring that contains no duplicate characters.\n\n**Constraints**\n- 0 ≤ len(s) ≤ 5 × 10⁴\n\n**Examples**\n*Example 1*\nInput:\nabcabcbb\nOutput:\n3\nExplanation: The answer is \"abc\", with length 3.\n\n*Example 2*\nInput:\nbbbbb\nOutput:\n1\nExplanation: The answer is \"b\", with length 1.\n\n*Example 3*\nInput:\npwwkew\nOutput:\n3\nExplanation: The answer is \"wke\", with length 3.\n\n**Function Signature**\n```python\ndef lengthOfLongestSubstring(s: str) -> int:\n    # return the length\n```\n**Explanation of Expected Solution**\nUse a sliding window with two pointers and a hash map (or array) storing the most recent index of each character. When a repeated character is found inside the window, move the left pointer to just after its previous occurrence.\n\n**Correctness Proof Sketch**\nThe window always contains unique characters. Expanding the right pointer adds a new character; if it creates a duplicate, shifting the left pointer past the previous occurrence restores uniqueness. Every possible maximal unique substring is examined, guaranteeing the maximum length is found.\n\n**Complexity Analysis**\nTime: O(n) where n = len(s).\nSpace: O(min(m, n)) where m is the size of the character set (ASCII/Unicode).\n\n**Reference Implementation (Python 3)**\n```python\ndef lengthOfLongestSubstring(s):\n    last = {}\n    max_len = 0\n    left = 0\n    for right, ch in enumerate(s):\n        if ch in last and last[ch] >= left:\n            left = last[ch] + 1\n        last[ch] = right\n        max_len = max(max_len, right - left + 1)\n    return max_len\n```\n",
+    "summary": "Length of the longest substring with all distinct characters.",
+    "constraints": [
+        "0 ≤ len(s) ≤ 5·10⁴"
+    ],
+    "examples": [
+        {
+            "input": "abcabcbb",
+            "output": "3",
+            "explanation": "Substring \"abc\"."
+        },
+        {
+            "input": "bbbbb",
+            "output": "1",
+            "explanation": "Substring \"b\"."
+        },
+        {
+            "input": "pwwkew",
+            "output": "3",
+            "explanation": "Substring \"wke\"."
+        }
+    ],
+    "testcases": [],
+    "topics": [
+        "Sliding Window",
+        "Hash Table"
+    ],
+    "io_template": [
+        "Single line: string s",
+        "Output: integer length of longest substring without repeating characters.",
+        ""
+    ],
+    "time_limit": 1000
+}
