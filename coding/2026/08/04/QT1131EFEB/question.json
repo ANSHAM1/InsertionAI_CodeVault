@@ -1,0 +1,55 @@
+{
+    "question_id": "QT1131EFEB",
+    "title": "Sum of Nodes with Exactly One Child",
+    "difficulty": "EASY",
+    "statement": "Given the root of a binary tree, return the sum of values of all nodes that have exactly one child (i.e., either left or right child is present, but not both). If the tree is empty, return 0.",
+    "summary": "Compute the sum of node values that have exactly one child in a binary tree.",
+    "constraints": [
+        "The number of nodes in the tree is in the range [0, 10^4].",
+        "-1000 <= Node.val <= 1000."
+    ],
+    "examples": [
+        {
+            "input": "root = [1,2,3,4,null,null,5]",
+            "output": "5",
+            "explanation": "The tree is:\n        1\n       / \\\n      2   3\n     /     \\\n    4       5\nNodes 2 and 3 each have exactly one child, so sum = 2 + 3 = 5."
+        },
+        {
+            "input": "root = [1,2,3,4,5,6,7]",
+            "output": "0",
+            "explanation": "Every internal node has two children, leaves have none."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "root = []",
+            "output": "0"
+        },
+        {
+            "input": "root = [1]",
+            "output": "0"
+        },
+        {
+            "input": "root = [1,2,null]",
+            "output": "2"
+        },
+        {
+            "input": "root = [1,null,2]",
+            "output": "2"
+        },
+        {
+            "input": "root = [1,2,3,null,4,null,5]",
+            "output": "5"
+        }
+    ],
+    "topics": [
+        "Tree",
+        "DFS"
+    ],
+    "io_template": {
+        "C++": "/**\n * Definition for a binary tree node.\n * struct TreeNode {\n *     int val;\n *     TreeNode *left;\n *     TreeNode *right;\n *     TreeNode() : val(0), left(nullptr), right(nullptr) {}\n *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}\n *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}\n * };\n */\nclass Solution {\npublic:\n    int sumOfNodesWithOneChild(TreeNode* root);\n};",
+        "Python": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\n\nclass Solution:\n    def sumOfNodesWithOneChild(self, root: Optional[TreeNode]) -> int:\n        pass",
+        "Java": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public int sumOfNodesWithOneChild(TreeNode root) {\n        // implementation\n    }\n}"
+    },
+    "time_limit": 2000
+}
