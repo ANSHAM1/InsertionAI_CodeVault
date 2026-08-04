@@ -1,0 +1,53 @@
+{
+    "question_id": "QT024ADD25",
+    "title": "Minimum Adjacent Swaps to Make a Palindrome",
+    "difficulty": "EASY",
+    "statement": "You are given a string `s` consisting only of lowercase English letters. In one operation you may swap any two adjacent characters (i.e., swap `s[i]` and `s[i+1]`). Determine the minimum number of such operations required to rearrange `s` into a palindrome. If it is impossible to form a palindrome, return `-1`.",
+    "summary": "Compute the minimum number of adjacent character swaps needed to rearrange a string into a palindrome.",
+    "constraints": [
+        "1 ≤ |s| ≤ 2000",
+        "`s` contains only characters 'a'–'z'."
+    ],
+    "examples": [
+        {
+            "input": "s = \"mamad\"",
+            "output": "3",
+            "explanation": "One optimal sequence: mamad → amamd → amadm → madma → madam (palindrome)."
+        },
+        {
+            "input": "s = \"asflkj\"",
+            "output": "-1",
+            "explanation": "No permutation of the characters can form a palindrome."
+        },
+        {
+            "input": "s = \"aabb\"",
+            "output": "2",
+            "explanation": "aabb → abab → abba (palindrome)."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "s = \"racecar\"",
+            "output": "0"
+        },
+        {
+            "input": "s = \"abcba\"",
+            "output": "0"
+        },
+        {
+            "input": "s = \"abca\"",
+            "output": "-1"
+        }
+    ],
+    "topics": [
+        "greedy",
+        "two-pointer",
+        "string manipulation"
+    ],
+    "io_template": {
+        "cpp": "#include <string>\nusing namespace std;\n\n// Returns the minimum number of adjacent swaps to make s a palindrome,\n// or -1 if impossible.\nint minSwapsToPalindrome(string s);",
+        "python": "def minSwapsToPalindrome(s: str) -> int:\n    \"\"\"\n    Returns the minimum number of adjacent swaps required to turn s into a palindrome.\n    Returns -1 if it is impossible.\n    \"\"\"\n    pass",
+        "java": "import java.util.*;\n\npublic class Solution {\n    // Returns the minimum number of adjacent swaps to make s a palindrome,\n    // or -1 if impossible.\n    public int minSwapsToPalindrome(String s) {\n        // implementation\n        return 0;\n    }\n}"
+    },
+    "time_limit": 1000
+}
