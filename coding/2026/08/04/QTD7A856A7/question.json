@@ -1,0 +1,52 @@
+{
+    "question_id": "QTD7A856A7",
+    "title": "Minimum Operations to Obtain All Vowels",
+    "difficulty": "EASY",
+    "statement": "You are given a string `s` consisting only of lowercase English letters. In one operation you may choose any index `i` (0‑indexed) and replace `s[i]` with the next letter in the alphabet; the letter `'z'` wraps around to `'a'`. You may apply the operation any number of times on any indices.\n\nYour goal is to make the final string contain **at least one** occurrence of each of the five vowels `'a'`, `'e'`, `'i'`, `'o'`, `'u'`. Return the minimum total number of operations required. If it is impossible (which can only happen when the string length is smaller than 5) return `-1`.",
+    "summary": "Compute the minimum number of letter‑increment operations needed to ensure the string contains all five vowels at least once.",
+    "constraints": [
+        "1 ≤ s.length ≤ 10^5",
+        "`s` contains only characters `'a'`‑`'z'`."
+    ],
+    "examples": [
+        {
+            "input": "s = \"aeioux\"",
+            "output": "0",
+            "explanation": "The string already contains every vowel."
+        },
+        {
+            "input": "s = \"zzzzz\"",
+            "output": "51",
+            "explanation": "Convert the five `'z'` characters to `'a'`, `'e'`, `'i'`, `'o'`, `'u'` respectively. Costs: 1, 5, 9, 15, 21 → total 51."
+        },
+        {
+            "input": "s = \"abcde\"",
+            "output": "36",
+            "explanation": "One optimal assignment is: keep `'a'` (0), keep `'e'` (0), change `'b'`→`'i'` (7), `'c'`→`'o'` (12), `'d'`→`'u'` (17). Total = 36."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "s = \"a\"",
+            "output": "-1"
+        },
+        {
+            "input": "s = \"zzzzzzzzzz\" (10 z’s)",
+            "output": "51 (any five of them are used)"
+        },
+        {
+            "input": "s = \"aeiouaeiouaeiou\"",
+            "output": "0"
+        }
+    ],
+    "topics": [
+        "public",
+        "hidden"
+    ],
+    "io_template": {
+        "c++": "int minOperations(string s) {\n    // Returns the minimum number of increment‑operations needed\n    // so that the resulting string contains at least one 'a', 'e', 'i', 'o', 'u'.\n    // If s.length < 5 return -1.\n}",
+        "python": "def minOperations(s: str) -> int:\n    # Returns the minimum number of increment‑operations needed\n    # so that the resulting string contains at least one 'a', 'e', 'i', 'o', 'u'.\n    # If len(s) < 5 return -1.\n}",
+        "java": "public int minOperations(String s) {\n    // Returns the minimum number of increment‑operations needed\n    // so that the resulting string contains at least one 'a', 'e', 'i', 'o', 'u'.\n    // If s.length() < 5 return -1.\n}"
+    },
+    "time_limit": 1000
+}
