@@ -1,0 +1,29 @@
+{
+    "question_id": "QT523FFCC8",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-06T05:38:24.090000Z",
+    "submitted_at": "2026-08-06T05:38:27.123000Z",
+    "time_taken": 3,
+    "time_complexity": "O(1)",
+    "space_complexity": "O(1)",
+    "passed_public_tests": [
+        {
+            "testcase": {
+                "input": "start = [1,2,3,4], end = [2,3,4,5], priority = [5,5,5,5], k = 2",
+                "output": "10"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "start = [0,0,0], end = [0,0,0], priority = [1,2,3], k = 3",
+                "output": "3"
+            },
+            "passed": false
+        }
+    ],
+    "feedback": "The solution is incomplete and does not implement any logic to solve the problem. It only contains a main function that returns 0, which fails all test cases. The problem requires dynamic programming with binary search to efficiently select up to k non-overlapping meetings with maximum total priority. The current approach does not process the input arrays or compute any meaningful result.",
+    "optimization_hint": "Implement a DP solution where meetings are sorted by end time, and for each meeting, use binary search to find the last non-overlapping meeting. Use a 2D DP array where dp[i][j] represents the maximum priority using the first i meetings and selecting at most j meetings. Transition: dp[i][j] = max(dp[i-1][j], dp[prev[i]][j-1] + priority[i]). Optimize space to O(k) if needed."
+}
