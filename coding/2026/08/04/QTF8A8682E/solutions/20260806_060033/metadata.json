@@ -1,0 +1,36 @@
+{
+    "question_id": "QTF8A8682E",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-06T06:00:33.556000Z",
+    "submitted_at": "2026-08-06T06:00:37.432000Z",
+    "time_taken": 4,
+    "time_complexity": "O(1)",
+    "space_complexity": "O(1)",
+    "passed_public_tests": [
+        {
+            "testcase": {
+                "input": "nums = [1,5,6,7,8,10,6,5,6]\nk = 4",
+                "output": "4"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "nums = [4,2,2,2,4,4,2,2]\nk = 0",
+                "output": "3"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "nums = [1,2,3,4,5]\nk = 10",
+                "output": "5"
+            },
+            "passed": false
+        }
+    ],
+    "feedback": "The solution is incomplete and does not implement any logic to solve the problem. It only contains a main function that returns 0, which fails all test cases. A proper solution requires using a sliding window approach with two deques to track the min and max in the current window efficiently.",
+    "optimization_hint": "Implement a sliding window with two deques to maintain the min and max in the current window, allowing O(n) time complexity."
+}
