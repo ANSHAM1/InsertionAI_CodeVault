@@ -1,0 +1,36 @@
+{
+    "question_id": "QT8470C960",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-06T06:49:44.863000Z",
+    "submitted_at": "2026-08-06T06:49:47.898000Z",
+    "time_taken": 3,
+    "time_complexity": "O(1)",
+    "space_complexity": "O(1)",
+    "passed_public_tests": [
+        {
+            "testcase": {
+                "input": "nums = [5, 1, 2, 3, 4, 6, 7, 8, 9]",
+                "output": "3"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "nums = [2, 2, 2, 2, 2]",
+                "output": "0"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "nums = [1, 2, 1, 2, 1, 2, 1]",
+                "output": "3"
+            },
+            "passed": false
+        }
+    ],
+    "feedback": "The solution is incomplete: the main function does not read input, compute the result, or output anything. It simply returns 0, which fails all test cases. The logic for solving the problem is missing entirely.",
+    "optimization_hint": "Implement the solution by first collecting the indices of all even numbers, then using a sliding window to find the minimum number of swaps required to bring them together. The optimal approach involves adjusting for the relative positions of evens and computing the cost to move them into a contiguous block."
+}
