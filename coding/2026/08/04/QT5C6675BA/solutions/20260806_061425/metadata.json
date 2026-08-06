@@ -1,0 +1,43 @@
+{
+    "question_id": "QT5C6675BA",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-06T06:14:25.801000Z",
+    "submitted_at": "2026-08-06T06:14:40.211000Z",
+    "time_taken": 14,
+    "time_complexity": "O(1)",
+    "space_complexity": "O(1)",
+    "passed_public_tests": [
+        {
+            "testcase": {
+                "input": "s = \"b\"",
+                "output": "1"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "s = \"aaaaaaaa\"",
+                "output": "0"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "s = \"bbbbbbbb\"",
+                "output": "4"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "s = \"ababababab\"",
+                "output": "0"
+            },
+            "passed": false
+        }
+    ],
+    "feedback": "The submitted code does not implement the required logic for the problem. It only contains a main function that returns 0 without reading input or computing the answer. As a result, it fails all test cases.",
+    "optimization_hint": "Implement the solution by treating 'a' as +1 and 'b' as -1, then use a greedy approach to ensure the prefix sum never goes negative by counting necessary flips."
+}
