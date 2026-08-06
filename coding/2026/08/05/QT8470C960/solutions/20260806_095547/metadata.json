@@ -1,0 +1,36 @@
+{
+    "question_id": "QT8470C960",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-06T09:55:47.716000Z",
+    "submitted_at": "2026-08-06T09:58:01.443000Z",
+    "time_taken": 134,
+    "time_complexity": "O(n)",
+    "space_complexity": "O(n)",
+    "passed_public_tests": [
+        {
+            "testcase": {
+                "input": "nums = [5, 1, 2, 3, 4, 6, 7, 8, 9]",
+                "output": "3"
+            },
+            "passed": true
+        },
+        {
+            "testcase": {
+                "input": "nums = [2, 2, 2, 2, 2]",
+                "output": "0"
+            },
+            "passed": true
+        },
+        {
+            "testcase": {
+                "input": "nums = [1, 2, 1, 2, 1, 2, 1]",
+                "output": "3"
+            },
+            "passed": true
+        }
+    ],
+    "feedback": "The solution is incorrect because it returns a long long type, but the function signature expected by the problem is int minAdjacentSwaps(vector<int>& nums). The submitted code defines a class Solution with a method returning long long, which does not match the required free function signature. As a result, the solution will not compile or link correctly in the judge environment. Additionally, even if the signature were corrected, the logic uses adjusted indices (i - count_of_evens_so_far) and computes the sum of absolute differences to the median, which is a known correct approach for this problem. However, due to the signature mismatch, the solution fails.",
+    "optimization_hint": "The current solution is already close to optimal. Ensure the function signature matches exactly: int minAdjacentSwaps(vector<int>& nums)."
+}
