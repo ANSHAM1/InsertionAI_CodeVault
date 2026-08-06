@@ -1,0 +1,36 @@
+{
+    "question_id": "QT8470C960",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-06T06:50:11.626000Z",
+    "submitted_at": "2026-08-06T06:50:14.849000Z",
+    "time_taken": 3,
+    "time_complexity": "O(1)",
+    "space_complexity": "O(1)",
+    "passed_public_tests": [
+        {
+            "testcase": {
+                "input": "nums = [5, 1, 2, 3, 4, 6, 7, 8, 9]",
+                "output": "3"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "nums = [2, 2, 2, 2, 2]",
+                "output": "0"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "nums = [1, 2, 1, 2, 1, 2, 1]",
+                "output": "3"
+            },
+            "passed": false
+        }
+    ],
+    "feedback": "The submitted code does not implement the required function `minAdjacentSwaps`. Instead, it only contains an empty `main` function. As a result, it fails all test cases because no logic is executed to compute the minimum adjacent swaps needed to group even numbers together. The solution must process the input array, identify positions of even numbers, and compute the minimal swaps using a sliding window or greedy approach.",
+    "optimization_hint": "Implement the function by first collecting the indices of all even numbers, then using a sliding window to find the minimal total distance to bring them together, adjusting for their relative order."
+}
