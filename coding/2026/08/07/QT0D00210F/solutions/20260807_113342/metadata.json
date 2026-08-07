@@ -1,0 +1,57 @@
+{
+    "question_id": "QT0D00210F",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-07T11:33:42.300000Z",
+    "submitted_at": "2026-08-07T11:33:50.652000Z",
+    "time_taken": 8,
+    "time_complexity": "O(1)",
+    "space_complexity": "O(1)",
+    "passed_public_tests": [
+        {
+            "testcase": {
+                "input": "[0,1]",
+                "output": "2"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "[0,1,0]",
+                "output": "2"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "[0,0,1,0,0,0,1,1]",
+                "output": "6"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "[0,0,0,0]",
+                "output": "0"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "[1,1,1,1]",
+                "output": "0"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "[0,1,0,1,0,1,0,1]",
+                "output": "8"
+            },
+            "passed": false
+        }
+    ],
+    "feedback": "The solution does not implement the required function findMaxLength. Instead, it defines a solve method that does nothing and does not read input or produce output. The main function calls solve but does not process any test cases. As a result, all test cases fail because no correct output is generated.",
+    "optimization_hint": "Implement the findMaxLength function using a hash map to store the first occurrence of each prefix sum (treating 0 as -1). Then, for each index, if the same prefix sum has been seen before, the subarray between the previous index and current index has equal 0s and 1s. Update the maximum length accordingly."
+}
