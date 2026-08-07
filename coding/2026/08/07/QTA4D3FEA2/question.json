@@ -1,0 +1,59 @@
+{
+    "question_id": "QTA4D3FEA2",
+    "title": "Design a Log Parser for Hierarchical System Events",
+    "difficulty": "HARD",
+    "statement": "You are tasked with designing a log parser for a distributed system that emits hierarchical events. Each log entry is a string in the format: `[timestamp] [component_path] [event_type] [message]`, where `component_path` is a dot-separated path like `service.api.v1.user.handler`. The system supports querying the number of events of a given type that occurred under a specific component path (including all its subcomponents). Implement a class `LogParser` that supports two operations: `void addLog(String log)` to add a log entry, and `int query(String componentPath, String eventType)` to return the count of logs matching the given component path prefix and event type. The timestamp and message parts are irrelevant for querying and can be ignored after parsing. All strings are non-empty and consist of alphanumeric characters, dots, hyphens, underscores, and spaces. The component path in logs and queries will always be valid dot-separated identifiers.",
+    "summary": "Count events by component path prefix and event type in a hierarchical logging system.",
+    "constraints": [
+        "Total number of log entries across all test cases ≤ 10^5",
+        "Length of each log entry ≤ 200",
+        "Number of queries ≤ 10^5",
+        "Component path depth ≤ 20",
+        "All strings use only [a-zA-Z0-9._- ] characters"
+    ],
+    "examples": [
+        {
+            "input": "LogParser parser = new LogParser(); parser.addLog('[1620000000] service.api.v1.user.handler INFO User logged in'); parser.addLog('[1620000001] service.api.v1.order.processor ERROR Payment failed'); parser.addLog('[1620000002] service.api.v1.user.handler INFO Session renewed'); parser.addLog('[1620000003] service.db.connection WARN High latency'); int result1 = parser.query('service.api.v1.user', 'INFO'); int result2 = parser.query('service.api', 'ERROR'); int result3 = parser.query('service.db', 'WARN'); int result4 = parser.query('service.api.v2', 'INFO');",
+            "output": "[2, 1, 1, 0]",
+            "explanation": "First query: two INFO logs under service.api.v1.user (both in user.handler). Second: one ERROR under service.api (in order.processor). Third: one WARN under service.db. Fourth: no logs under service.api.v2."
+        },
+        {
+            "input": "LogParser parser = new LogParser(); parser.addLog('[100] a.b.c DEBUG test'); parser.addLog('[101] a.b DEBUG another'); parser.addLog('[102] a DEBUG third'); int r1 = parser.query('a', 'DEBUG'); int r2 = parser.query('a.b', 'DEBUG'); int r3 = parser.query('a.b.c', 'DEBUG');",
+            "output": "[3, 2, 1]",
+            "explanation": "All three logs match 'a' prefix. First two match 'a.b'. Only first matches 'a.b.c'."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "LogParser parser = new LogParser(); parser.addLog('[1620000000] service.api.v1.user.handler INFO User logged in'); parser.addLog('[1620000001] service.api.v1.order.processor ERROR Payment failed'); parser.addLog('[1620000002] service.api.v1.user.handler INFO Session renewed'); parser.addLog('[1620000003] service.db.connection WARN High latency'); int result1 = parser.query('service.api.v1.user', 'INFO'); int result2 = parser.query('service.api', 'ERROR'); int result3 = parser.query('service.db', 'WARN'); int result4 = parser.query('service.api.v2', 'INFO');",
+            "output": "[2, 1, 1, 0]"
+        },
+        {
+            "input": "LogParser parser = new LogParser(); parser.addLog('[100] a.b.c DEBUG test'); parser.addLog('[101] a.b DEBUG another'); parser.addLog('[102] a DEBUG third'); int r1 = parser.query('a', 'DEBUG'); int r2 = parser.query('a.b', 'DEBUG'); int r3 = parser.query('a.b.c', 'DEBUG');",
+            "output": "[3, 2, 1]"
+        },
+        {
+            "input": "LogParser parser = new LogParser(); parser.addLog('[1] x.y.z INFO msg'); int r = parser.query('x.y', 'INFO');",
+            "output": "[1]"
+        },
+        {
+            "input": "LogParser parser = new LogParser(); int r = parser.query('a.b', 'INFO');",
+            "output": "[0]"
+        },
+        {
+            "input": "LogParser parser = new LogParser(); parser.addLog('[1] a.b.c.d.e INFO deep'); parser.addLog('[2] a.b.c INFO shallow'); int r1 = parser.query('a.b.c', 'INFO'); int r2 = parser.query('a.b.c.d', 'INFO');",
+            "output": "[2, 1]"
+        }
+    ],
+    "topics": [
+        "string parsing",
+        "lld",
+        "oops"
+    ],
+    "io_template": {
+        "C++": "class LogParser { public: void addLog(std::string log); int query(std::string componentPath, std::string eventType); };",
+        "Python": "class LogParser: def addLog(self, log: str) -> None: pass def query(self, componentPath: str, eventType: str) -> int: pass",
+        "Java": "class LogParser { public void addLog(String log); public int query(String componentPath, String eventType); }"
+    },
+    "time_limit": 2000
+}
