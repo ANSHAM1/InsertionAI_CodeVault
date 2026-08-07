@@ -1,0 +1,58 @@
+{
+    "question_id": "QTC310CF3C",
+    "title": "Design a Configuration Validator for Nested Key-Value Systems",
+    "difficulty": "MEDIUM",
+    "statement": "You are building a configuration validator for a system that uses dot-separated keys to represent nested settings (e.g., `database.host.port`, `logging.level.console`). The validator must support two operations: setting a value at a key path, and checking whether a given key path is explicitly set (not inherited from parents). A key is considered explicitly set only if a value was directly assigned to it via the `set` operation, not if it only exists due to a parent being set. Implement a class `ConfigValidator` with: `void set(String key, String value)` to assign a value at the given key path, and `boolean isExplicitlySet(String key)` to return true if and only if the key has been directly set via a prior `set` call. Key paths consist of lowercase alphanumeric characters and dots, with no consecutive dots or leading/trailing dots. Values are non-empty strings.",
+    "summary": "Track explicitly set keys in a dot-separated hierarchical configuration system.",
+    "constraints": [
+        "Total number of operations (set + isExplicitlySet) ≤ 10^5",
+        "Length of each key ≤ 100",
+        "Length of each value ≤ 50",
+        "Key paths use only [a-z0-9.] with valid dot separation"
+    ],
+    "examples": [
+        {
+            "input": "ConfigValidator cv = new ConfigValidator(); cv.set('a.b.c', 'value1'); cv.set('a.b', 'value2'); boolean b1 = cv.isExplicitlySet('a'); boolean b2 = cv.isExplicitlySet('a.b'); boolean b3 = cv.isExplicitlySet('a.b.c'); boolean b4 = cv.isExplicitlySet('a.b.c.d');",
+            "output": "[false, true, true, false]",
+            "explanation": "'a' was never directly set. 'a.b' and 'a.b.c' were set explicitly. 'a.b.c.d' was never set."
+        },
+        {
+            "input": "ConfigValidator cv = new ConfigValidator(); cv.set('x.y.z', 'val'); boolean r1 = cv.isExplicitlySet('x'); boolean r2 = cv.isExplicitlySet('x.y'); boolean r3 = cv.isExplicitlySet('x.y.z'); boolean r4 = cv.isExplicitlySet('x.y.z.w');",
+            "output": "[false, false, true, false]",
+            "explanation": "Only the exact key 'x.y.z' was set explicitly."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "ConfigValidator cv = new ConfigValidator(); cv.set('a.b.c', 'value1'); cv.set('a.b', 'value2'); boolean b1 = cv.isExplicitlySet('a'); boolean b2 = cv.isExplicitlySet('a.b'); boolean b3 = cv.isExplicitlySet('a.b.c'); boolean b4 = cv.isExplicitlySet('a.b.c.d');",
+            "output": "[false, true, true, false]"
+        },
+        {
+            "input": "ConfigValidator cv = new ConfigValidator(); cv.set('x.y.z', 'val'); boolean r1 = cv.isExplicitlySet('x'); boolean r2 = cv.isExplicitlySet('x.y'); boolean r3 = cv.isExplicitlySet('x.y.z'); boolean r4 = cv.isExplicitlySet('x.y.z.w');",
+            "output": "[false, false, true, false]"
+        },
+        {
+            "input": "ConfigValidator cv = new ConfigValidator(); boolean r = cv.isExplicitlySet('a.b');",
+            "output": "[false]"
+        },
+        {
+            "input": "ConfigValidator cv = new ConfigValidator(); cv.set('a', 'val'); boolean r1 = cv.isExplicitlySet('a'); cv.set('a.b', 'val2'); boolean r2 = cv.isExplicitlySet('a'); boolean r3 = cv.isExplicitlySet('a.b');",
+            "output": "[true, true, true]"
+        },
+        {
+            "input": "ConfigValidator cv = new ConfigValidator(); cv.set('a.b.c.d', 'deep'); cv.set('a.b', 'shallow'); int count = 0; if (cv.isExplicitlySet('a')) count++; if (cv.isExplicitlySet('a.b')) count++; if (cv.isExplicitlySet('a.b.c')) count++; if (cv.isExplicitlySet('a.b.c.d')) count++;",
+            "output": "[2]"
+        }
+    ],
+    "topics": [
+        "string parsing",
+        "lld",
+        "oops"
+    ],
+    "io_template": {
+        "C++": "class ConfigValidator { public: void set(std::string key, std::string value); bool isExplicitlySet(std::string key); };",
+        "Python": "class ConfigValidator: def set(self, key: str, value: str) -> None: pass def isExplicitlySet(self, key: str) -> bool: pass",
+        "Java": "class ConfigValidator { public void set(String key, String value); public boolean isExplicitlySet(String key); }"
+    },
+    "time_limit": 2000
+}
