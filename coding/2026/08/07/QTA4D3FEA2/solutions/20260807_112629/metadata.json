@@ -1,0 +1,50 @@
+{
+    "question_id": "QTA4D3FEA2",
+    "language": "CPP",
+    "status": "FAILED",
+    "score": 0,
+    "started_at": "2026-08-07T11:26:29.135000Z",
+    "submitted_at": "2026-08-07T11:28:49.464000Z",
+    "time_taken": 140,
+    "time_complexity": "O(1)",
+    "space_complexity": "O(1)",
+    "passed_public_tests": [
+        {
+            "testcase": {
+                "input": "LogParser parser = new LogParser(); parser.addLog('[1620000000] service.api.v1.user.handler INFO User logged in'); parser.addLog('[1620000001] service.api.v1.order.processor ERROR Payment failed'); parser.addLog('[1620000002] service.api.v1.user.handler INFO Session renewed'); parser.addLog('[1620000003] service.db.connection WARN High latency'); int result1 = parser.query('service.api.v1.user', 'INFO'); int result2 = parser.query('service.api', 'ERROR'); int result3 = parser.query('service.db', 'WARN'); int result4 = parser.query('service.api.v2', 'INFO');",
+                "output": "[2, 1, 1, 0]"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "LogParser parser = new LogParser(); parser.addLog('[100] a.b.c DEBUG test'); parser.addLog('[101] a.b DEBUG another'); parser.addLog('[102] a DEBUG third'); int r1 = parser.query('a', 'DEBUG'); int r2 = parser.query('a.b', 'DEBUG'); int r3 = parser.query('a.b.c', 'DEBUG');",
+                "output": "[3, 2, 1]"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "LogParser parser = new LogParser(); parser.addLog('[1] x.y.z INFO msg'); int r = parser.query('x.y', 'INFO');",
+                "output": "[1]"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "LogParser parser = new LogParser(); int r = parser.query('a.b', 'INFO');",
+                "output": "[0]"
+            },
+            "passed": false
+        },
+        {
+            "testcase": {
+                "input": "LogParser parser = new LogParser(); parser.addLog('[1] a.b.c.d.e INFO deep'); parser.addLog('[2] a.b.c INFO shallow'); int r1 = parser.query('a.b.c', 'INFO'); int r2 = parser.query('a.b.c.d', 'INFO');",
+                "output": "[2, 1]"
+            },
+            "passed": false
+        }
+    ],
+    "feedback": "The solution is incomplete: the addLog and query methods are not implemented. The addLog method has no parameters and does nothing, and query is missing entirely. This fails to satisfy the problem requirements.",
+    "optimization_hint": "Implement addLog to parse each log entry, extract component_path and event_type, and update counts for all prefixes of the component_path. Use a map from (prefix, event_type) to count. In query, return the count for the given (componentPath, event_type)."
+}
