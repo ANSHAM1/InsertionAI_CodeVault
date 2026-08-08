@@ -1,0 +1,60 @@
+{
+    "question_id": "QTF928039D",
+    "title": "Minimum Operations to Make Array Alternating",
+    "difficulty": "MEDIUM",
+    "statement": "You are given an array of integers `nums` of length `n`. In one operation, you can choose any index `i` (0-indexed) and change `nums[i]` to any integer value. Your task is to find the minimum number of operations required to make the array alternating. An array is alternating if for every index `i` (0 <= i < n-1), `nums[i] != nums[i+1]`.",
+    "summary": "Find the minimum number of value changes needed to make adjacent elements in an array unequal.",
+    "constraints": [
+        "1 <= nums.length <= 10^5",
+        "1 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+        {
+            "input": "nums = [3,1,3,2,4,3]",
+            "output": "3",
+            "explanation": "One way to make the array alternating is to change nums[1] to 2, nums[3] to 1, and nums[5] to 1, resulting in [3,2,3,1,4,1]."
+        },
+        {
+            "input": "nums = [1,2,2,2,2]",
+            "output": "2",
+            "explanation": "Change nums[2] to 1 and nums[4] to 1 to get [1,2,1,2,1]."
+        },
+        {
+            "input": "nums = [1,1,1,1,1]",
+            "output": "2",
+            "explanation": "Change nums[1] to 2 and nums[3] to 2 to get [1,2,1,2,1]."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "nums = [1]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [1,2]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [1,1]",
+            "output": "1"
+        },
+        {
+            "input": "nums = [1,2,1,2,1,2]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [1,1,2,2,3,3]",
+            "output": "3"
+        }
+    ],
+    "topics": [
+        "Greedy",
+        "Frequency Counting"
+    ],
+    "io_template": {
+        "cpp": "class Solution { public: int minOperations(vector<int>& nums) { // Your code here } };",
+        "python": "class Solution: def minOperations(self, nums: List[int]) -> int: # Your code here",
+        "java": "class Solution { public int minOperations(int[] nums) { // Your code here } }"
+    },
+    "time_limit": 1000
+}
