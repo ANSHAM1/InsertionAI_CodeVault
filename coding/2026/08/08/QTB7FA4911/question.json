@@ -1,0 +1,60 @@
+{
+    "question_id": "QTB7FA4911",
+    "title": "Minimum Adjacent Swaps to Group All 1s Together",
+    "difficulty": "MEDIUM",
+    "statement": "Given a binary array `nums`, return the minimum number of adjacent swaps required to group all 1's together in any contiguous subarray. The array is circular, meaning the first and last elements are adjacent.",
+    "summary": "Find the minimum adjacent swaps needed to group all 1s in a circular binary array.",
+    "constraints": [
+        "1 <= nums.length <= 10^5",
+        "nums[i] is either 0 or 1"
+    ],
+    "examples": [
+        {
+            "input": "nums = [0,1,0,1,1,0,0]",
+            "output": "1",
+            "explanation": "There are 3 ones. We can group them by swapping the 0 at index 2 with the 1 at index 3 (one swap) to get [0,1,1,1,0,0,0]."
+        },
+        {
+            "input": "nums = [0,1,1,1,0,0,1,1,0]",
+            "output": "2",
+            "explanation": "There are 5 ones. Best window of 5 consecutive elements (considering circularity) has 3 ones already, so we need 2 swaps to bring the remaining 2 ones into the window."
+        },
+        {
+            "input": "nums = [1,1,0,0,1]",
+            "output": "0",
+            "explanation": "The array is already grouped in circular sense: the two 1s at ends and one in middle? Actually [1,1,0,0,1] -> in circular view, the 1s at index 0,1 and 4 are adjacent via circularity, so they form a group of three? Wait, no: only if we consider wrapping. The ones are at 0,1,4. In circular array, 4 and 0 are adjacent, so we have a block [4,0,1] which is three consecutive in circular sense. So yes, already grouped."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "nums = [1,1,1,0,0,0]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [0,0,0,1,1,1]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [1,0,1,0,1]",
+            "output": "2"
+        },
+        {
+            "input": "nums = [0,0,0,0]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [1,0,0,0,0,0,1]",
+            "output": "5"
+        }
+    ],
+    "topics": [
+        "Sliding Window",
+        "Array"
+    ],
+    "io_template": {
+        "cpp": "class Solution { public: int minSwaps(vector<int>& nums) { // Your code here } };",
+        "python": "class Solution: def minSwaps(self, nums: List[int]) -> int: # Your code here",
+        "java": "class Solution { public int minSwaps(int[] nums) { // Your code here } }"
+    },
+    "time_limit": 1000
+}
