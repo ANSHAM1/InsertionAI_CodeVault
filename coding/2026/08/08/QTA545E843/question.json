@@ -1,0 +1,52 @@
+{
+    "question_id": "QTA545E843",
+    "title": "Minimum Operations to Make Array Alternating",
+    "difficulty": "EASY",
+    "statement": "You are given an array of integers. In one operation, you can change any element to any integer value. Your task is to find the minimum number of operations required to make the array alternating, meaning that for every index i (0-indexed), if i is even then arr[i] should be equal to some value x, and if i is odd then arr[i] should be equal to some value y, where x and y can be any integers (possibly equal).",
+    "summary": "Find the minimum number of value changes needed to make adjacent elements in an array follow an alternating pattern of two values.",
+    "constraints": [
+        "1 <= arr.length <= 10^5",
+        "1 <= arr[i] <= 10^5"
+    ],
+    "examples": [
+        {
+            "input": "arr = [3,1,3,2,4,3]",
+            "output": "3",
+            "explanation": "We can change arr[1] to 3, arr[3] to 3, and arr[4] to 3 to get [3,3,3,3,3,3] which is alternating (x=3, y=3). Alternatively, we could make even indices 3 and odd indices 2: change arr[1] to 2, arr[3] to 2, arr[5] to 2 → [3,2,3,2,3,2] in 3 changes."
+        },
+        {
+            "input": "arr = [1,2,2,2,2]",
+            "output": "2",
+            "explanation": "Change arr[0] to 2 and arr[4] to 1 → [2,2,2,2,1] is not alternating. Better: make even indices 1 and odd indices 2 → change arr[2] and arr[4] to 1 → [1,2,1,2,1] in 2 changes."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "arr = [1,1,1,1,1]",
+            "output": "2"
+        },
+        {
+            "input": "arr = [1,2,1,2,1,2]",
+            "output": "0"
+        },
+        {
+            "input": "arr = [1]",
+            "output": "0"
+        },
+        {
+            "input": "arr = [1,2,3,4,5,6,7,8,9,10]",
+            "output": "5"
+        }
+    ],
+    "topics": [
+        "Arrays",
+        "Greedy",
+        "Frequency Counting"
+    ],
+    "io_template": {
+        "cpp": "class Solution { public: int minOperations(vector<int>& arr) { // Your code here } };",
+        "python": "class Solution: def minOperations(self, arr: List[int]) -> int: # Your code here",
+        "java": "class Solution { public int minOperations(int[] arr) { // Your code here } }"
+    },
+    "time_limit": 1000
+}
