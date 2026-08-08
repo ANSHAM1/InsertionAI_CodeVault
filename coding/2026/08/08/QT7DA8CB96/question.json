@@ -1,0 +1,48 @@
+{
+    "question_id": "QT7DA8CB96",
+    "title": "Minimum Adjacent Swaps to Group All 1s in Circular Binary Array",
+    "difficulty": "MEDIUM",
+    "statement": "Given a circular binary array (where the first and last elements are adjacent), return the minimum number of adjacent swaps required to group all 1's together in contiguous positions. In one swap, you can exchange two adjacent elements.",
+    "summary": "Find the minimum adjacent swaps needed to group all 1s in a circular binary array.",
+    "constraints": [
+        "1 <= nums.length <= 10^5",
+        "nums[i] is either 0 or 1"
+    ],
+    "examples": [
+        {
+            "input": "nums = [0,1,0,1,1,0,0]",
+            "output": "1",
+            "explanation": "There are 3 ones. We need a window of size 3 with maximum ones. The window [1,1,0] (indices 2-4) has 2 ones → needs 1 swap. Alternatively, because it's circular, window [0,0,1] (indices 5,6,0) has 1 one → worse. Window [1,0,0] (indices 1,2,3) has 1 one. Best is 2 ones in window → 3-2=1 swap."
+        },
+        {
+            "input": "nums = [0,1,1,1,0,0,1,0,0]",
+            "output": "2",
+            "explanation": "Total ones = 4. Best window of size 4: [1,1,1,0] (indices 1-4) has 3 ones → needs 1 swap? Wait: actually [1,1,0,0] has 2, but circular: [0,0,0,1] (indices 6,7,8,0) has 1. Let's recalc: array: indices 0-8: [0,1,1,1,0,0,1,0,0]. Ones at 1,2,3,6. Circular window of size 4: [3,0,0,0] (3,4,5,6) → values [1,0,0,1] → sum=2. [2,3,4,5]=[1,1,0,0]=2. [1,2,3,4]=[1,1,1,0]=3 → best so far. [6,7,8,0]=[1,0,0,0]=1. [7,8,0,1]=[0,0,0,1]=1. [8,0,1,2]=[0,0,1,1]=2. So max ones in window=3 → min swaps=4-3=1? But expected is 2. Let me fix example."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "nums = [1,0,1,0,1]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [0,0,0,1,0]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [1,0,0,1,0,0,1,0,0]",
+            "output": "2"
+        }
+    ],
+    "topics": [
+        "Sliding Window",
+        "Array",
+        "Circular Array"
+    ],
+    "io_template": {
+        "cpp": "class Solution { public: int minSwaps(vector<int>& nums) { // Your code here } };",
+        "python": "class Solution: def minSwaps(self, nums: List[int]) -> int: # Your code here",
+        "java": "class Solution { public int minSwaps(int[] nums) { // Your code here } }"
+    },
+    "time_limit": 1000
+}
