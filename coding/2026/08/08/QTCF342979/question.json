@@ -1,0 +1,51 @@
+{
+    "question_id": "QTCF342979",
+    "title": "Maximum Sum of Non-Overlapping Subarrays of Length K",
+    "difficulty": "MEDIUM",
+    "statement": "Given an array of integers and an integer k, find the maximum sum obtainable by selecting any number of non-overlapping subarrays, each of exactly length k. You may choose zero or more such subarrays, but they must not overlap (i.e., no index can be part of more than one selected subarray).",
+    "summary": "Find the maximum sum obtainable by selecting non-overlapping subarrays of fixed length k.",
+    "constraints": [
+        "1 <= k <= arr.length <= 10^5",
+        "-10^4 <= arr[i] <= 10^4"
+    ],
+    "examples": [
+        {
+            "input": "arr = [1,2,3,4,5,6,1,2,3], k = 3",
+            "output": "21",
+            "explanation": "Choose subarrays [1,2,3] (sum=6) starting at index 0 and [4,5,6] (sum=15) starting at index 3 → total 21. Alternatively, [2,3,4]=9 and [5,6,1]=12 and [2,3] invalid → not better. Or [3,4,5]=12 and [6,1,2]=9 → 21. Cannot take overlapping ones."
+        },
+        {
+            "input": "arr = [-1,-2,-3,-4], k = 2",
+            "output": "0",
+            "explanation": "All subarrays of length 2 have negative sum. Choosing none gives sum 0, which is better than any negative sum."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "arr = [2,1,5,1,3,2], k = 3",
+            "output": "8"
+        },
+        {
+            "input": "arr = [1,1,1,1,1,1], k = 2",
+            "output": "3"
+        },
+        {
+            "input": "arr = [10,-2,-10,5,20], k = 2",
+            "output": "25"
+        },
+        {
+            "input": "arr = [5], k = 1",
+            "output": "5"
+        }
+    ],
+    "topics": [
+        "Dynamic Programming",
+        "Sliding Window"
+    ],
+    "io_template": {
+        "cpp": "class Solution { public: int maxSum(vector<int>& arr, int k) { // Your code here } };",
+        "python": "class Solution: def maxSum(self, arr: List[int], k: int) -> int: # Your code here",
+        "java": "class Solution { public int maxSum(int[] arr, int k) { // Your code here } }"
+    },
+    "time_limit": 1000
+}
