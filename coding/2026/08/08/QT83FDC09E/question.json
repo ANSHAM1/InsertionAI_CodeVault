@@ -1,0 +1,57 @@
+{
+    "question_id": "QT83FDC09E",
+    "title": "Minimum Value Changes for Alternating Adjacent Elements",
+    "difficulty": "MEDIUM",
+    "statement": "Given an array nums, return the minimum number of elements to change so that for every adjacent pair of elements, they are not equal. You can change any element to any integer value.",
+    "summary": "Find the minimum number of value changes needed to make adjacent elements in an array unequal.",
+    "constraints": [
+        "1 <= nums.length <= 10^5",
+        "1 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+        {
+            "input": "nums = [1,1,1,1,1]",
+            "output": "2",
+            "explanation": "Change elements at indices 1 and 3 to 2 (or any value !=1), resulting in [1,2,1,2,1]."
+        },
+        {
+            "input": "nums = [1,2,3,4,5]",
+            "output": "0",
+            "explanation": "Already all adjacent elements are unequal."
+        },
+        {
+            "input": "nums = [1,1,2,2,3,3]",
+            "output": "2",
+            "explanation": "Change one 1 and one 2 (e.g. indices 1 and 3) to break the pairs."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "nums = [1]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [1,1]",
+            "output": "1"
+        },
+        {
+            "input": "nums = [1,2,1,2,1,2]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [1,1,2,2,2,1]",
+            "output": "2"
+        }
+    ],
+    "topics": [
+        "Greedy",
+        "Array",
+        "Dynamic Programming"
+    ],
+    "io_template": {
+        "C++": "int minChanges(vector<int>& nums) {",
+        "Python": "def minChanges(nums: List[int]) -> int:",
+        "Java": "public int minChanges(int[] nums) {"
+    },
+    "time_limit": 1000
+}
