@@ -1,0 +1,60 @@
+{
+    "question_id": "QT84B907A6",
+    "title": "Minimum Operations to Make Array Elements Alternating",
+    "difficulty": "EASY",
+    "statement": "Given an array of integers, you can change any element to any integer value in one operation. Find the minimum number of operations required to make the array follow an alternating pattern where no two adjacent elements are equal. The pattern does not need to follow specific values—only that adjacent elements differ.",
+    "summary": "Find the minimum number of value changes needed to make adjacent elements in an array unequal.",
+    "constraints": [
+        "1 <= nums.length <= 10^5",
+        "1 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+        {
+            "input": "nums = [1,2,1,1,3]",
+            "output": "1",
+            "explanation": "Change the third element from 1 to 2 to get [1,2,2,1,3] → but wait, adjacent 2s are equal. Better: change fourth element from 1 to 2 → [1,2,1,2,3]. Now all adjacent are unequal. Only 1 change needed."
+        },
+        {
+            "input": "nums = [1,1,1,1]",
+            "output": "2",
+            "explanation": "Change elements at indices 1 and 3 to 2 → [1,2,1,2]. Two operations."
+        },
+        {
+            "input": "nums = [1,2,3,4]",
+            "output": "0",
+            "explanation": "Already alternating (no two adjacent equal)."
+        }
+    ],
+    "testcases": [
+        {
+            "input": "nums = [1,2,1,1,3]",
+            "output": "1"
+        },
+        {
+            "input": "nums = [1,1,1,1]",
+            "output": "2"
+        },
+        {
+            "input": "nums = [1,2,3,4]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [5]",
+            "output": "0"
+        },
+        {
+            "input": "nums = [2,2]",
+            "output": "1"
+        }
+    ],
+    "topics": [
+        "Greedy",
+        "Array"
+    ],
+    "io_template": {
+        "C++": "int minOperations(vector<int>& nums) {  // Write your code here  }",
+        "Python": "def minOperations(nums: List[int]) -> int:  # Write your code here",
+        "Java": "public int minOperations(int[] nums) {  // Write your code here  }"
+    },
+    "time_limit": 1000
+}
